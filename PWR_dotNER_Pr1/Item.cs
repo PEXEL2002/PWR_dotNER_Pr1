@@ -16,7 +16,7 @@ namespace PWR_dotNER_Pr1
         private int weight;
         public int Weight
         {
-            get { return this.Weight; }
+            get { return this.weight; }
         }
         private int price;
         public int Price
@@ -33,11 +33,11 @@ namespace PWR_dotNER_Pr1
             this.id = id;
             this.weight = random.Next(1, 10);
             this.price = random.Next(1, 10);
-            this.ratio = Convert.ToDouble(this.weight) / Convert.ToDouble(this.price);
+            this.ratio = (double)price / weight;
         }
         public override string ToString()
         {
-            return $"id: {this.id} weight: {this.weight} price: {this.price} price-to-weight-ratio : {this.ratio}";
+            return $"ID: {id}, Waga: {weight}, Cena: {price}, Stosunek cena/waga: {ratio:F2}";
         }
     }
 }
