@@ -4,32 +4,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PWR_dotNER_Pr1{
-    class Item {
+namespace PWR_dotNER_Pr1
+{
+    class Item
+    {
         private int id;
-        public int Id{
+        public int Id
+        {
             get { return this.id; }
         }
         private int weight;
-        public int Weight{
+        public int Weight
+        {
             get { return this.Weight; }
         }
         private int price;
-        public int Price{
+        public int Price
+        {
             get { return this.price; }
         }
-        private float ratio;
-        public float Ratio{
+        private double ratio;
+        public double Ratio
+        {
             get { return this.ratio; }
         }
-        public Item(int id, int seed){
-            Random random = new Random(seed);
+        public Item(int id, Random random)
+        {
             this.id = id;
-            this.weight = random.Next(10);
-            this.price = random.Next(10);
+            this.weight = random.Next(1, 10);
+            this.price = random.Next(1, 10);
+            this.ratio = Convert.ToDouble(this.weight) / Convert.ToDouble(this.price);
         }
-        void toString(){
-            Console.WriteLine($"id: {this.id} weight: {this.weight} price: {this.price} price to weight ratio : {this.ratio}");
+        public override string ToString()
+        {
+            return $"id: {this.id} weight: {this.weight} price: {this.price} price-to-weight-ratio : {this.ratio}";
         }
     }
 }
