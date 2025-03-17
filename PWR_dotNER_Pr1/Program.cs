@@ -1,4 +1,7 @@
-﻿namespace PWR_dotNER_Pr1
+﻿using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("TestProject1")]
+namespace PWR_dotNER_Pr1
 {
     internal class Program
     {

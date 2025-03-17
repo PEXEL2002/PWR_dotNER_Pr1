@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-
+[assembly: InternalsVisibleTo("TestProject1")]
 namespace PWR_dotNER_Pr1
 {
     class Item
@@ -33,6 +34,13 @@ namespace PWR_dotNER_Pr1
             this.id = id;
             this.weight = random.Next(1, 10);
             this.price = random.Next(1, 10);
+            this.ratio = (double)price / weight;
+        }
+        public Item(int id, int w, int p)
+        {
+            this.id = id;
+            this.weight = w;
+            this.price = p;
             this.ratio = (double)price / weight;
         }
         public override string ToString()

@@ -3,16 +3,24 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-
+[assembly: InternalsVisibleTo("TestProject1")]
 namespace PWR_dotNER_Pr1
 {
     class Problem
     {
         private List<Item> items = new List<Item>();
+        public List<Item> Items 
+        {
+            get { return items; }
+        }
         private int n;
-
+        public Problem()
+        {
+            this.n = 0;
+        }
         public Problem(int n, int seed)
         {
             Random random = new Random(seed);
@@ -22,7 +30,11 @@ namespace PWR_dotNER_Pr1
                 items.Add(new Item(i, random));
             }
         }
-
+        public void ItemAdd(int w, int p)
+        {
+            items.Add(new Item(this.n, w, p));
+            this.n++;
+        }
         public override string ToString()
         {
             string result = "";
@@ -43,11 +55,14 @@ namespace PWR_dotNER_Pr1
 
             foreach (var item in items)
             {
-                if (actualCapacity + item.Weight > capacity) break;
-
-                result += $"{item.Id} ";
-                actualCapacity += item.Weight;
-                actualPrice += item.Price;
+                if (actualCapacity + item.Weight <= capacity)
+                {
+                    result += $"{item.Id} ";
+                    actualCapacity += item.Weight;
+                    actualPrice += item.Price;
+                }
+                else
+                    break; 
             }
 
             result += $"\nWaga plecaka: {actualCapacity}\nCena plecaka: {actualPrice}";
