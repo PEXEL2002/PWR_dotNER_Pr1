@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-[assembly: InternalsVisibleTo("TestProject1")]
+[assembly: InternalsVisibleTo("TestProject1"), InternalsVisibleTo("App")]
 namespace PWR_dotNER_Pr1
 {
     class Item

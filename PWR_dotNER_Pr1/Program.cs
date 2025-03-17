@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("TestProject1")]
+[assembly: InternalsVisibleTo("TestProject1"), InternalsVisibleTo("App")]
 namespace PWR_dotNER_Pr1
 {
     internal class Program

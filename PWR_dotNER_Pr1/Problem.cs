@@ -6,7 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-[assembly: InternalsVisibleTo("TestProject1")]
+[assembly: InternalsVisibleTo("TestProject1"), InternalsVisibleTo("App")]
 namespace PWR_dotNER_Pr1
 {
     class Problem
@@ -40,7 +40,7 @@ namespace PWR_dotNER_Pr1
             string result = "";
             foreach (var item in items)
             {
-                result += item.ToString() + "\n";
+                result += item.ToString() + Environment.NewLine;
             }
             return result;
         }
@@ -64,8 +64,7 @@ namespace PWR_dotNER_Pr1
                 else
                     break; 
             }
-
-            result += $"\nWaga plecaka: {actualCapacity}\nCena plecaka: {actualPrice}";
+            result += Environment.NewLine + $"Waga plecaka: {actualCapacity}"+ Environment.NewLine + $"Cena plecaka: {actualPrice}";
             return result;
         }
     }
