@@ -48,8 +48,7 @@ namespace TestProject1
             problem.ItemAdd(12, 20);
             int testCapacity = 3;
             string result = problem.Solver(testCapacity);
-            string[] lines = result.Split('\n');
-            bool isEmpty = lines[0] == "Moje przedmioty: ";
+            bool isEmpty = (result == "Moje przedmioty: \r\nWaga plecaka: 0\r\nCena plecaka: 0");
             Assert.IsTrue(isEmpty);
         }
 

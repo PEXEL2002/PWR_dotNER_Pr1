@@ -61,10 +61,7 @@ namespace PWR_dotNER_Pr1
                     actualCapacity += item.Weight;
                     actualPrice += item.Price;
                 }
-                else
-                    break; 
-            }
-            result += Environment.NewLine + $"Waga plecaka: {actualCapacity}"+ Environment.NewLine + $"Cena plecaka: {actualPrice}";
+                result += Environment.NewLine + $"Waga plecaka: {actualCapacity}"+ Environment.NewLine + $"Cena plecaka: {actualPrice}";
             return result;
         }
     }
